@@ -15,9 +15,11 @@
  */
 package com.growingintech.pipeline
 
+import java.io.File
+
 import com.typesafe.config.{Config, ConfigFactory}
 
 class DataConfiguration extends Serializable {
 
-  val conf: Config = ConfigFactory.load(System.getProperty("pipeline.conf"))
+  val conf: Config = ConfigFactory.parseFile(new File(System.getProperty("pipeline.conf")))
 }
