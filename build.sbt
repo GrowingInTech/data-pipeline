@@ -42,6 +42,9 @@ lazy val root = (project in file("."))
         "com.github.pureconfig" %% "pureconfig" % "0.17.2",
         "com.growingintech" %% "spark-input-sources" % "1.0.1",
 
+        // Logging
+        "org.apache.logging.log4j" %% "log4j-api-scala" % "12.0",
+
         // For unit testing
         "org.scalatest" %% "scalatest" % scalatestVersion % Test,
         "org.scalatest" %% "scalatest-shouldmatchers" % scalatestVersion % Test,

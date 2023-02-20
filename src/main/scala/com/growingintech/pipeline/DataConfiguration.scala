@@ -18,8 +18,13 @@ package com.growingintech.pipeline
 import java.io.File
 
 import com.typesafe.config.{Config, ConfigFactory}
+import org.apache.logging.log4j.scala.Logging
 
-class DataConfiguration extends Serializable {
 
-  val conf: Config = ConfigFactory.parseFile(new File(System.getProperty("pipeline.conf")))
+class DataConfiguration extends Serializable with Logging {
+
+  logger.info("Parsing config.file.")
+  val conf: Config = ConfigFactory.parseFile(new File(System.getProperty("config.file")))
+    .withFallback(ConfigFactory.parseFile(new File(System.getProperty("application.file"))))
+    .resolve()
 }
