@@ -23,7 +23,7 @@ import org.apache.logging.log4j.scala.Logging
 
 class DataConfiguration extends Serializable with Logging {
 
-  logger.info("Parsing config.file.")
+  logger.info("Parsing application.conf")
   val conf: Config = ConfigFactory.parseFile(new File(System.getProperty("config.file")))
     .withFallback(ConfigFactory.parseFile(new File(System.getProperty("application.file"))))
     .resolve()
